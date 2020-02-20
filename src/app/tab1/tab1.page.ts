@@ -64,4 +64,14 @@ export class Tab1Page implements OnInit{
         }
     }
 
+    clear(){
+        this.model = '';
+        this.strasse = '';
+        this.plz = '';
+        this.ort = '';
+        this.nr = '';
+        this.addresszusatz = '';
+        this.land = this.availableCountries[0];
+    }
+
 }

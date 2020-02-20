@@ -81,4 +81,13 @@ export class Tab2Page implements OnInit {
         }
     }
 
+    clear(){
+        this.strasse = '';
+        this.plz = '';
+        this.ort = '';
+        this.nr = '';
+        this.addresszusatz = '';
+        this.land = this.availableCountries[0];
+    }
+
 }
