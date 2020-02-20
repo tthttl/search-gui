@@ -116,26 +116,24 @@ export class AddressesService {
     }
 
     private filterStrasse(query: string, ort = ''):string[] {
-        let list = [];
+        let list = addresses;
         if (ort) {
             list = addresses.filter((address: Address) => address.ort === ort);
         }
-        list = addresses
-            .filter((address: Address) => this.includes(address.strasse, query))
-            .map((address: Address) => address.strasse);
-        const set = new Set<string>(list);
+        list = list
+            .filter((address: Address) => this.includes(address.strasse, query));
+        const set = new Set<string>(list.map((address: Address) => address.strasse));
         return [...set];
     }
 
     private filterOrt(query: string, strasse = ''): string [] {
-        let list = [];
+        let list = addresses;
         if (strasse) {
             list = addresses.filter((address: Address) => address.strasse === strasse);
         }
-        list = addresses
-            .filter((address: Address) => this.includes(address.ort, query))
-            .map((address) => address.ort);
-        const set = new Set<string>(list);
+        list = list
+            .filter((address: Address) => this.includes(address.ort, query));
+        const set = new Set<string>(list.map((address) => address.ort));
         return [...set];
     }
 
