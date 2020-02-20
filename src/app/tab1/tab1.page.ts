@@ -23,11 +23,13 @@ export class Tab1Page implements OnInit{
     addresszusatz: string;
     land: string;
 
+    availableCountries: string [] = ['Schweiz', 'Deutschland', 'Frankreich', 'Lichtenstein', 'Italien'];
+
     constructor(private addressService: AddressesService) {
     }
 
     ngOnInit(): void {
-        this.land = 'Schweiz';
+        this.land = this.availableCountries[0];
     }
 
     search = (text$: Observable<string>) =>

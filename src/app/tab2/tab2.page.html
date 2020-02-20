@@ -80,7 +80,9 @@
                 <ion-label position="stacked" color="primary">Land
                   <ion-text color="danger">*</ion-text>
                 </ion-label>
-                <ion-input [(ngModel)]="land" name="land"></ion-input>
+                <ion-select [(ngModel)]="land" name="land">
+                  <ion-select-option *ngFor="let country of availableCountries" [value]="country">{{country}}</ion-select-option>
+                </ion-select>
               </ion-item>
             </ion-col>
           </ion-row>
